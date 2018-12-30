@@ -1,0 +1,49 @@
+﻿<Window x:Class="Vacancy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vacancy"
+        mc:Ignorable="d"
+        Title="Вакансії" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Введіть людину" Padding="5" Grid.Column="0" Grid.Row="0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>Ім'я:</TextBlock>
+                        <TextBlock>посада:</TextBlock>
+                        <TextBlock Width="105">дата народження:</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBox x:Name="NameBox" MaxLength="250" Width="260"/>
+                        <TextBox x:Name="positionBox" MaxLength="250" Width="260"></TextBox>
+                        <TextBox x:Name="birthdayBox" MaxLength="250" Width="260"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <Canvas>
+                    <Button x:Name="Add_button" Width="60" Height="20" Canvas.Left="49" Content="Додати" Canvas.Top="5" Click="Add_button_Click" />
+                    <Button x:Name="Del_button" Width="60" Height="20" Canvas.Right="50" Content="Видалити" Canvas.Left="264" Canvas.Top="5" Click="Del_button_Click"/>
+                    <TextBlock x:Name="Messeger" Canvas.Left="140" Canvas.Top="30"  Width="100" Height="20"/>
+                </Canvas>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Всі люди" Grid.Column="1" Grid.RowSpan="2">
+            <ListBox Name="PipleList" MouseDoubleClick="EditPost"></ListBox>
+        </GroupBox>
+        <GroupBox Header="Працівники"  Grid.Column="0" Grid.Row="1">
+            <ListBox Name="WorkersList" MouseDoubleClick="EditPost"></ListBox>
+        </GroupBox>
+    </Grid>
+</Window>
