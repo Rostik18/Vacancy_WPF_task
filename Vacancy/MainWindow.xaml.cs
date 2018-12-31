@@ -18,13 +18,13 @@ namespace Vacancy
 {
     public partial class MainWindow : Window
     {
-        List<Employee> Piple;
-        List<Employee> Workers;
+        MapOfEmployee Piple;
+        MapOfEmployee Workers;
         public MainWindow()
         {
             InitializeComponent();
-            Piple = new List<Employee>();
-            Workers = new List<Employee>();
+            Piple = new MapOfEmployee();
+            Workers = new MapOfEmployee();
         }
         private void Add_button_Click(object sender, RoutedEventArgs e)
         {
@@ -86,9 +86,9 @@ namespace Vacancy
         private Birthday GetBirthday(string data)
         {
             int d, m, y;
-
             List<int> rez = new List<int>();
             string local = "";
+
             for (int i = 0; i < data.Length; i++)
             {
                 while (true)
